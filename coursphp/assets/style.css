@@ -1,0 +1,156 @@
+body {
+    background-color: rgba(202, 221, 176, 0.315);
+    margin: 0px 20px;
+}
+
+.darkmode {
+    background-color: rgba(0, 0, 0, 0.897) !important;
+    color:gray !important;
+}
+
+.darkmode h1 {
+    background-color: rgba(0, 0, 0, 0.897) !important;
+    color:gray !important;
+}
+
+nav {
+    padding-top: 5px;
+    margin-left:-20px;
+    margin-right:-20px;
+    text-align: center;
+    background-color: black;
+    color: yellow;
+}
+
+nav > a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.89);
+    font-size: 17px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 20px;
+    white-space: pre-line;
+}
+
+pre {
+    font-family: "courier new", courier, monospace;
+    font-size: 20px;
+}
+
+h1 {
+    text-align: center;
+    width: 100% important;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left:-10px;
+    margin-right:-10px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    font-size: 50px !important;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.accueil h1 {
+    color: yellow;
+    background-color: rgba(0, 0, 255, 0.459);
+}
+
+.accueil img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+}
+
+.cours h1 {
+    color: rgb(248, 140, 140);
+    background-color: rgba(255, 166, 0, 0.555);
+}
+
+.pdf::after {
+    background-image: url("iconpdf.svg");
+    background-size: 25px 25px;
+    display: inline-block;
+    width: 25px; 
+    height: 25px;
+    content:"";
+}
+
+.bonjour h1 {
+    color: rgb(30, 209, 30);
+    background-color: rgb(248, 21, 21);
+}
+
+.etoiles h1 {
+    color: violet;
+    background-color: chartreuse;
+}
+
+.tablemulti h1 {
+    color: rgba(0, 0, 255, 0.877);
+    background-color: rgba(255, 255, 0, 0.459);
+}
+
+.somme h1 {
+    color: rgba(211, 106, 45, 0.89);
+    background-color: rgba(32, 160, 32, 0.603);
+}
+
+.factorielle h1 {
+    color: chartreuse;
+    background-color: violet;
+}
+
+.prixtva h1 {
+    color: white;
+    background-color: black;
+}
+
+.pairimpair h1 {
+    color: teal;
+    background-color: rgb(203, 158, 240);
+}
+
+.echangevar h1 {
+    color: white;
+    background-color: blue;
+}
+
+.tabutil h1 {
+    color: white;
+    background-color: teal;
+}
+
+.jeu h1 {
+    color: black;
+    background-color: white;
+}
+
+.tpphp h1 {
+    color: white;
+    background-color: red;
+}
+
+.tpphp th, .tpphp td {
+    border: 1px solid black;
+    margin-right: 25%;
+}
+
+.tpphp table {
+    border-collapse: collapse;
+}
+
+.tpphp th {
+    background-color: rgb(127, 225, 255);
+}
