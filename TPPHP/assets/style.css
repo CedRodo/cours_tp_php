@@ -1,0 +1,71 @@
+h1 {
+    margin: 80px auto 100px auto;
+    padding: 10px 20px;
+    font-size: 50px;
+    width:fit-content;
+    background-color: black;
+    color: wheat;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+th, td {
+    border: 1px solid black;
+    margin-right: 25%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    padding: 3px;
+    text-align:start;
+    background-color: rgb(127, 225, 255);
+}
+
+td {
+    padding: 3px;
+    background-color: white;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+.tableau {
+    margin-top: 50px;
+}
+
+.entete {
+    padding-top: 10px;
+    margin-top: 50px;
+    margin-bottom: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.entete p {
+    margin-top: 0px;
+}
+
+p {
+    white-space: pre-line;
+}
+
+button {
+    align-items: center;
+    width:fit-content;
+    height: fit-content;
+}
+
+.boncommande {
+    padding: 0px 10px;
+    background-color:rgb(245, 245, 238);
+}
+
+.tabbc {
+    display: inline;
+    width:auto;
+}
