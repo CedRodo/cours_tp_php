@@ -530,12 +530,57 @@ $article[9]=array(&quot;nomarticle&quot; =&gt; &quot;Chaussures de Football adid
 
 <footer style="margin-top: 20px; padding-top: 50px; text-align: center">
     Téléphone : <a href==#">07 11 22 33 34</a> - <a href==#">Email : moi@monentreprise.com</a> - <a href==#">3, avenue de la République</a>
-</footer
+</footer>
 </div>
 
-<h2>Fonction affichant l’âge de l’utilisateur avec une couleur différente sur le texte suivant l’âge de l’utilisateur</h2>
+<h2>Tableau d'informations Utilisateur</h2>
 
-<p style="text-decoration: underline;">Contenu des fonctions :</p>
+<p class="contenu">Contenu de code :</p>
+
+<pre>
+&lt;?php // Tableau associatif / indic&eacute; PHP utilisateur affichant le nom le prenom son mail et son &acirc;ge...
+$utilisateur[&quot;nom&quot;]=&quot;Melki&quot;;
+$utilisateur[&quot;prenom&quot;]=&quot;Yoel&quot;;
+$utilisateur[&quot;age&quot;]=34;
+
+echo $utilisateur[&quot;nom&quot;];  // afficher une case du tableau
+echo &quot;&lt;br/&gt;&lt;br/&gt;&quot;;
+var_dump($utilisateur);   // afficher tout mon tableau juste technique
+echo &quot;&lt;br/&gt;&lt;br/&gt;&quot;;
+print_r($utilisateur);  // afficher tout mon tableau juste technique
+echo &quot;&lt;br/&gt;&lt;br/&gt;&quot;;
+// afficher tout mon tableau avec une boucle plus representative
+foreach (  $utilisateur  as $key =&gt; $value    ){
+  echo &quot;ma cl&eacute; est : &quot;. $key. &quot;  . ma valeur est : &quot;.$value;
+  echo &quot;&lt;br/&gt;&lt;br/&gt;&quot;;
+}
+?&gt;</pre>
+
+<p class="resultat"> - Résultat :</p>
+
+<?php // Tableau associatif / indicé PHP utilisateur affichant le nom le prenom son mail et son âge...
+$utilisateur["nom"]="Melki";
+$utilisateur["prenom"]="Yoel";
+$utilisateur["age"]=34;
+
+echo $utilisateur["nom"];  // afficher une case du tableau
+echo "<br/><br/>";
+var_dump($utilisateur);   // afficher tout mon tableau juste technique
+echo "<br/><br/>";
+print_r($utilisateur);  // afficher tout mon tableau juste technique
+echo "<br/><br/>";
+// afficher tout mon tableau avec une boucle plus representative
+foreach (  $utilisateur  as $key => $value    ){
+   echo "ma clé est : ". $key. "  . ma valeur est : ".$value;
+   echo "<br/><br/>";
+}
+?>
+
+<h2>Fonction affichant l'âge de l'utilisateur avec une couleur différente sur le texte suivant l'âge de l'utilisateur</h2>
+
+<h3>1) 1ère méthode</h3>
+
+<p class="contenu">Contenu de code :</p>
 
 <pre>
 &lt;?php
@@ -558,8 +603,38 @@ $article[9]=array(&quot;nomarticle&quot; =&gt; &quot;Chaussures de Football adid
 affiche_age($age=14);
 affiche_age($age=4);
 affiche_age($age=24);
-affiche_age($age=67);
+affiche_age($age=67);</pre>
 
+<p class="resultat"> - Résultat :</p>
+
+<?php 
+    function affiche_age(int $age) {
+    $color="black";
+    $marge = "margin-top: 50px";
+    // entre 0 et 10 ans => red
+    // entre 11 et 20 ans => blue
+    // entre 21 et 30 ans => yellow
+    global $utilisateur;
+    if ($age<=10) {
+        $color="red";
+    } elseif ($age>10 && $age<=20) {
+        $color="blue";
+    } elseif ($age>20 && $age<=30)  {
+        $color="yellow";
+    }
+    echo "<br/><div style=color:".$color.";>Vous avez ".$age." ans.</div><br />";
+    }
+affiche_age($age=14);
+affiche_age($age=4);
+affiche_age($age=24);
+affiche_age($age=67);
+?>
+
+<h3>2) 2ème méthode</h3>
+
+<p class="contenu">Contenu de code :</p>
+
+<pre>
 function affiche_age2( $age) {
    $color=&quot;red&quot;;
    $colors=[
@@ -597,28 +672,7 @@ affiche_age2($age=37);
 
 <p class="resultat"> - Résultat :</p>
 
-<?php 
-    function affiche_age(int $age) {
-    $color="black";
-    $marge = "margin-top: 50px";
-    // entre 0 et 10 ans => red
-    // entre 11 et 20 ans => blue
-    // entre 21 et 30 ans => yellow
-    global $utilisateur;
-    if ($age<=10) {
-        $color="red";
-    } elseif ($age>10 && $age<=20) {
-        $color="blue";
-    } elseif ($age>20 && $age<=30)  {
-        $color="yellow";
-    }
-    echo "<br/><div style=color:".$color.";>Vous avez ".$age." ans.</div><br />";
-    }
-affiche_age($age=14);
-affiche_age($age=4);
-affiche_age($age=24);
-affiche_age($age=67);
-
+<?php
 function affiche_age2( $age) {
     $color="red"; 
     $colors=[
@@ -652,6 +706,206 @@ affiche_age2($age=14);
 affiche_age2($age=57);
 affiche_age2($age=97);
 affiche_age2($age=37);
+?>
+
+<h3>3) 3ème méthode</h3>
+
+<p class="contenu">Contenu de code :</p>
+
+<pre>
+&lt;?php
+$colors=[
+   &quot;red&quot;,
+   &quot;green&quot;,
+   &quot;grey&quot;,
+   &quot;black&quot;,
+   &quot;purple&quot;,
+   &quot;yellow&quot;,
+   &quot;pink&quot;,
+   &quot;blue&quot;,
+   &quot;orange&quot;,
+   &quot;brown&quot;,
+   &quot;black&quot;,
+   &quot;black&quot;,
+   &quot;pink&quot;];
+function affiche_age3($age) {
+   $color=&quot;red&quot;;
+   global $colors;
+   // En code on aime pas r&eacute;p&eacute;ter on fait des boucles...
+   $agemin=0;
+   $agemax=10;
+   for ($i=0;$i&lt;12;$i++) {
+       if (  $age &gt;= $agemin  &amp;&amp; $age &lt;=$agemax  ) {  $color=$colors[$i]; }
+       $agemin=$i*10;
+       $agemax=($i*10)+10;
+   }
+   global $utilisateur;
+   echo &quot;&lt;div style=color:&quot;.$color.&quot;;&gt;&quot;.$age.&quot;&lt;/div&gt;&lt;br /&gt;&quot;;
+}
+
+for ($i=1; $i &lt; 13; $i++){
+   affiche_age3($age=$i*10);
+}
+?&gt;</pre>
+
+<p class="resultat"> - Résultat :</p>
+
+<?php
+$colors=[
+    "red",
+    "green",
+    "grey",
+    "black",
+    "purple",
+    "yellow",
+    "pink",
+    "blue",
+    "orange",
+    "brown",
+    "black",
+    "black",
+    "pink"];
+function affiche_age3($age) {
+    $color="red"; 
+    global $colors;
+    // En code on aime pas répéter on fait des boucles...
+    $agemin=0;
+    $agemax=10;
+    for ($i=0;$i<12;$i++) {
+        if (  $age >= $agemin  && $age <=$agemax  ) {  $color=$colors[$i]; }
+        $agemin=$i*10;
+        $agemax=($i*10)+10;
+    }
+    global $utilisateur;
+    echo "<div style=color:".$color.";>".$age."</div><br />";
+}
+
+for ($i=1; $i < 13; $i++){
+    affiche_age3($age=$i*10);
+}
+?>
+
+<h2>Fonction titre prenant en argument le titre, la taille du titre et la couleur du titre</h2>
+
+<p class="contenu">Contenu de code :</p>
+
+<pre>
+&lt;?php
+//Cr&eacute;ez une fonction titre prenant en argument
+//  le titre,  du titre et la couleur du titre.
+function affiche_titre($titre,$couleur,$taille){
+   echo &quot;&lt;div style=color:&quot;.$couleur.&quot;;&gt;&lt;h&quot;.$taille.&quot;&gt;&quot;.$titre.&quot; &lt;/h&quot;.$taille.&quot;&gt; &lt;/div&gt;&quot;;
+}
+// Nous faisons d&eacute;marrer &agrave; 4 pour ne pas g&eacute;n&eacute;rer de h1, h2 et h3 qui ont d&eacute;j&agrave; un style dans la page
+for ($i=4; $i &lt; 7; $i++){
+   affiche_titre(&quot;mon titre &quot;.rand(4,6),$colors[rand(4,6)],rand(4,6));
+}
+?&gt;
+</pre>
+
+<p class="resultat"> - Résultat :</p>
+
+<?php
+ //Créez une fonction titre prenant en argument
+//  le titre,  du titre et la couleur du titre.
+function affiche_titre($titre,$couleur,$taille){
+    echo "<div style=color:".$couleur.";><h".$taille.">".$titre." </h".$taille."> </div>";
+}
+// Nous faisons démarrer à 4 pour ne pas générer de h1, h2 et h3 qui ont déjà un style dans la page
+for ($i=4; $i < 7; $i++){ 
+    affiche_titre("mon titre ".rand(4,6),$colors[rand(4,6)],rand(4,6));
+} 
+?>
+
+<?php // Variable avec des string int tableau indicé et associatif
+// Repété une info : boucle for foreach while
+// Conditionné avec if
+// Fonction paramétré contraindre les types des paramétres ?>
+
+
+<h2>Fonction calculatrice prenant en paramètres un tableau et l'opérateur indiquant l'opération à réaliser</h2>
+
+<p class="contenu">Contenu de code :</p>
+
+<pre>
+&lt;?php // Cr&eacute;ez une fonction calculatrice prenant en param&egrave;tre
+// un tableau et l&rsquo;op&eacute;rateur indiquant l&rsquo;op&eacute;ration &agrave; r&eacute;aliser.
+function calculette($tab,$operateur){
+ var_dump($tab);
+ echo &quot; = &quot;;
+ $result=0;
+ if ($operateur==&quot;+&quot;) {  $result=  array_sum($tab);      }
+   if ($operateur==&quot;-&quot;) {
+       for ($i=0;$i&lt;count($tab);$i++){
+           $result=$result-$tab[$i];  //  $prix_total[0]+$prix_total[1]+$prix_total[2]  
+       }
+   }
+   if ($operateur==&quot;*&quot;) {
+       $result=1;
+       for ($i=0;$i&lt;count($tab);$i++){
+           $result=$result*$tab[$i];  //  $prix_total[0]+$prix_total[1]+$prix_total[2]  
+       }
+   }
+   if ($operateur==&quot;/&quot;) {
+       $result=1;
+       for ($i=0;$i&lt;count($tab);$i++){
+           $result=$result/$tab[$i];  //  $prix_total[0]+$prix_total[1]+$prix_total[2]  
+       }
+   }
+   return $result;
+}
+$tab=[rand(1,6),rand(1,6),rand(1,6),rand(1,6)];
+
+
+echo calculette($tab,&quot;+&quot;);
+echo &quot;&lt;br/&gt;&lt;br/&gt;&quot;;
+echo calculette($tab,&quot;-&quot;);
+echo &quot;&lt;br/&gt;&lt;br/&gt;&quot;;
+echo calculette($tab,&quot;*&quot;);
+echo &quot;&lt;br/&gt;&lt;br/&gt;&quot;;
+echo calculette($tab,&quot;/&quot;);
+echo &quot;&lt;br/&gt;&lt;br/&gt;&quot;;
+?&gt;</pre>
+
+<p class="resultat"> - Résultat :</p>
+
+<?php // Créez une fonction calculatrice prenant en paramètre
+// un tableau et l’opérateur indiquant l’opération à réaliser.
+function calculette($tab,$operateur){
+  var_dump($tab);
+  echo " = ";
+  $result=0;
+  if ($operateur=="+") {  $result=  array_sum($tab);      }
+    if ($operateur=="-") {
+        for ($i=0;$i<count($tab);$i++){ 
+            $result=$result-$tab[$i];  //  $prix_total[0]+$prix_total[1]+$prix_total[2]  
+        }
+    }
+    if ($operateur=="*") {
+        $result=1;
+        for ($i=0;$i<count($tab);$i++){ 
+            $result=$result*$tab[$i];  //  $prix_total[0]+$prix_total[1]+$prix_total[2]  
+        }
+    }
+    if ($operateur=="/") {
+        $result=1;
+        for ($i=0;$i<count($tab);$i++){ 
+            $result=$result/$tab[$i];  //  $prix_total[0]+$prix_total[1]+$prix_total[2]  
+        }
+    }
+    return $result;
+}
+$tab=[rand(1,6),rand(1,6),rand(1,6),rand(1,6)];
+
+
+echo calculette($tab,"+");
+echo "<br/><br/>";
+echo calculette($tab,"-");
+echo "<br/><br/>";
+echo calculette($tab,"*");
+echo "<br/><br/>";
+echo calculette($tab,"/");
+echo "<br/><br/>";
 ?>
 
 <?php include 'footer.php' ?>

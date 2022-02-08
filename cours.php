@@ -401,6 +401,150 @@ echo $var_maj;
 
 ?&gt;
 
+// TP Découverte PHP
+
+&lt;?php
+
+
+// nombre de ligne de mon tableau de facture
+$nb_ligne=rand(1,10);
+
+// num&eacute;ro de facture al&eacute;atoire
+$nb_facture=rand(1000,5000);
+
+// date du jour
+$date=date(&quot;d-m-y&quot;);
+
+// Tableau en PHP de donn&eacute;e d articles REF
+for ($i=0;$i&lt;$nb_ligne;$i++) {
+   $reference[]=&quot;ref_&quot;.rand(2340,8345);
+   $prix[]=rand(1,1000);
+   $quantite[]=rand(1,10);
+   $designation[]=&quot;prod_&quot;.rand(2340,8345);
+}
+
+// Tableau en PHP de donn&eacute;e d articles PT
+for ($i=0;$i&lt;$nb_ligne;$i++) {
+   $prix_total[$i]= $prix[$i]*$quantite[$i];
+   $prix_total_ttc[$i]= $prix[$i]*1.2;
+}
+
+$prix_total_HT=0;
+// somme d'un tableau de valeur
+for ($i=0;$i&lt;$nb_ligne;$i++){
+   $prix_total_HT=$prix_total_HT+$prix_total[$i];  //  $prix_total[0]+$prix_total[1]+$prix_total[2]  
+}
+
+// Fonction qui permet de faire la somme du tableau de valeur
+$prix_total_HT_F=array_sum($prix_total);
+
+// Taxe = Prix * 0.2
+$taxe= $prix_total_HT * 0.2;
+
+// Total = taxe + Prix_total_HT
+$total= $taxe + $prix_total_HT;
+
+// Tableau associatif / indic&eacute; PHP utilisateur affichant le nom le prenom son mail et son &acirc;ge...
+$utilisateur[&quot;nom&quot;]=&quot;Melki&quot;;
+$utilisateur[&quot;prenom&quot;]=&quot;Yoel&quot;;
+$utilisateur[&quot;age&quot;]=34;
+
+//echo $utilisateur[&quot;nom&quot;];  afficher une case du tableau
+// var_dump($utilisateur);   afficher tout mon tableau juste technique
+// print_r($utilisateur);  afficher tout mon tableau juste technique
+// afficher tout mon tableau avec une boucle plus representative
+/*foreach (  $utilisateur  as $key =&gt; $value    ){
+  echo &quot;ma cl&eacute; est : &quot;. $key. &quot;  . ma valeur est : &quot;.$value;
+}*/
+
+/*
+Cr&eacute;ez une fonction
+affichant l&rsquo;&acirc;ge de l&rsquo;utilisateur
+ avec une couleur ... : HTML style=color:red;
+ diff&eacute;rente sur le texte suivant l&rsquo;&acirc;ge de l&rsquo;utilisateur.
+*/
+
+$colors=[
+   &quot;red&quot;,
+   &quot;green&quot;,
+   &quot;grey&quot;,
+   &quot;black&quot;,
+   &quot;purple&quot;,
+   &quot;yellow&quot;,
+   &quot;pink&quot;,
+   &quot;blue&quot;,
+   &quot;orange&quot;,
+   &quot;brown&quot;,
+   &quot;black&quot;,
+   &quot;black&quot;,
+   &quot;pink&quot;];
+function affiche_age ( $age) {
+   $color=&quot;red&quot;;
+   global $colors;
+   // En code on aime pas r&eacute;p&eacute;t&eacute; on fait des boucles...
+   $agemin=0;
+   $agemax=10;
+   for ($i=0;$i&lt;12;$i++) {
+       if (  $age &gt;= $agemin  &amp;&amp; $age &lt;=$agemax  ) {  $color=$colors[$i]; }
+       $agemin=$i*10;
+       $agemax=($i*10)+10;
+   }
+   global $utilisateur;
+   echo &quot;&lt;div style=color:&quot;.$color.&quot;;&gt;&quot;.$age.&quot;&lt;/div&gt;&lt;br /&gt;&quot;;
+}
+
+/*
+for ($i=1; $i &lt; 13; $i++){
+   affiche_age($age=$i*10);
+}
+*/
+//Cr&eacute;ez une fonction titre prenant en argument
+//  le titre,  du titre et la couleur du titre.
+function affiche_titre($titre,$couleur,$taille){
+   echo &quot;&lt;div style=color:&quot;.$couleur.&quot;;&gt;&lt;h&quot;.$taille.&quot;&gt;&quot;.$titre.&quot; &lt;/h&quot;.$taille.&quot;&gt; &lt;/div&gt;&quot;;
+}
+for ($i=1; $i &lt; 7; $i++){
+   affiche_titre(&quot;mon titre &quot;.rand(1,6),$colors[rand(1,6)],rand(1,6));
+}
+
+// Variable avec des string int tableau indic&eacute; et associatif
+// Rep&eacute;t&eacute; une info : boucle for foreach while
+// Conditionn&eacute; avec if
+// Fonction param&eacute;tr&eacute; contraindre les types des param&eacute;tres
+
+
+// Cr&eacute;ez une fonction calculatrice prenant en param&egrave;tre
+// un tableau et l&rsquo;op&eacute;rateur indiquant l&rsquo;op&eacute;ration &agrave; r&eacute;aliser.
+function calculette($tab,$operateur){
+ var_dump($tab);
+ $result=0;
+ if ($operateur==&quot;+&quot;) {  $result=  array_sum($tab);      }
+   if ($operateur==&quot;-&quot;) {
+       for ($i=0;$i&lt;count($tab);$i++){
+           $result=$result-$tab[$i];  //  $prix_total[0]+$prix_total[1]+$prix_total[2]  
+       }
+   }
+   if ($operateur==&quot;*&quot;) {
+       $result=1;
+       for ($i=0;$i&lt;count($tab);$i++){
+           $result=$result*$tab[$i];  //  $prix_total[0]+$prix_total[1]+$prix_total[2]  
+       }
+   }
+   if ($operateur==&quot;/&quot;) {
+       $result=1;
+       for ($i=0;$i&lt;count($tab);$i++){
+           $result=$result/$tab[$i];  //  $prix_total[0]+$prix_total[1]+$prix_total[2]  
+       }
+   }
+   return $result;
+}
+$tab=[rand(1,6),rand(1,6),rand(1,6),rand(1,6)];
+
+
+echo calculette($tab,&quot;+&quot;);
+echo calculette($tab,&quot;-&quot;);
+echo calculette($tab,&quot;*&quot;);
+echo calculette($tab,&quot;/&quot;);
 </pre>
 
 </div>
