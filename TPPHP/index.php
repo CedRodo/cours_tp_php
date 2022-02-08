@@ -148,7 +148,9 @@
     <button>Imprimer cette page</button>
 </header>
 
-<?php echo tableauarticle($article); ?>
+<?php 
+// echo tableauarticle($article); 
+?>
 
 <table style="margin-top: 50px;">
     <tr>
