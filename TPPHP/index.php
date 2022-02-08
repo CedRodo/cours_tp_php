@@ -6,15 +6,15 @@
 
 <?php
     // for($i=0;$i<=9;$i++) {
-    //     $quantiteArticle[$i] = rand(1,10);
+    //     $quantiteArticle[$i] = rand(1,20);
     // }
 
     $i = 0;
     do {
-        $quantiteArticle[$i] = rand(1,10);
+        $quantiteArticle[$i] = rand(1,20);
     $i++;
     }
-    while ($i <= 10);
+    while ($i <= 9);
 ?>
 
 <h2 style="margin-top: 80px; margin-bottom: 50px;">Tableau des articles au complet</h2>
@@ -135,9 +135,9 @@
 3 avenue de la republique
 75012 Paris
     </p>
-    <p>Facture n°<?php echo rand(100,6000); ?>
+    <p>Facture n°<?= rand(100,6000); ?>
 
-    Date : <?php echo randomDate(); ?>
+    Date : <?= randomDate(); ?>
     </p>
     <p><?php $aleaclient = rand(0,5); echo $client[$aleaclient]['nomclient'];
     echo "<br/>";
@@ -149,6 +149,55 @@
 </header>
 
 <?php echo tableauarticle($article); ?>
+
+<table style="margin-top: 50px;">
+    <tr>
+        <th>Référence</th>
+        <th style="width: 500px;">Désignation</th>
+        <th style="width: 200px;">Prix unitaire (hors taxe)</th>
+        <th>Quantité</th>
+        <th style="width: 150px;">Prix total</th>
+        <th style="width: 200px;">Total TTC</th>
+    </tr>
+
+    <?php 
+    $httotal = 0;
+    shuffle($article);
+    for ($i=0;$i<$nbligne;$i++) { ?>
+        <tr>
+            <td><?php echo $article[$i]['refarticle']; ?></td>
+            <td><?php echo $article[$i]['nomarticle']; ?></td>
+            <td style="text-align: end;"><?php $prixArt = $article[$i]['htarticle']; echo $prixArt." €"; ?></td>
+            <td style="text-align: center;"><?php $qtArt = $quantiteArticle[$i]; echo $qtArt; ?></td>
+            <td style="text-align: end;"><?php $ptArt = $qtArt * $prixArt; echo $ptArt." €"; ?></td>
+            <td style="text-align: end;"><?php echo totalttc($ptArt)." €"; ?></td>
+        </tr>
+    <?php
+    $httotal = $httotal + $ptArt; } ?>
+</table>
+
+<table class="tabtotal" style="margin-top: 50px;">
+        <tr>
+            <th>Total HT</th>
+            <td style="text-align: end;">
+            <?php echo $httotal." €"; ?>
+            </td>
+        </tr>
+        <tr>
+            <th>TVA 20%</th>
+            <td style="text-align: end;">
+            <?php $tvatotal = ($httotal * 0.2);
+            echo $tvatotal." €"; ?>
+    </td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td style="text-align: end;">
+            <?php echo ($httotal + $tvatotal)." €"; ?>
+            </td>
+        </tr>
+</table>
+
 <footer style="margin-top: 20px; padding-top: 50px; text-align: center">
     Téléphone : <a href==#">07 11 22 33 34</a> - <a href==#">Email : moi@monentreprise.com</a> - <a href==#">3, avenue de la République</a>
 </div>

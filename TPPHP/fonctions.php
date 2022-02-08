@@ -1,5 +1,7 @@
 <?php
 
+$nbligne = rand(1,10);
+
 function aleaquantite(int $nbalea) {
 $aleaquant = rand(1,$nbalea);
 return $aleaquant;
