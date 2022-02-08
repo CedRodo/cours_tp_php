@@ -129,7 +129,7 @@
 
 <h2 style="margin-top: 100px;">Bon de commande avec articles, nombre d'articles et quantité de chaque article générés aléatoirement</h2>
 
-<div class="boncommande">
+<div class="boncommande" style="height: 800px">
 <header class="entete">
     <p>MON ENTREPRISE
 3 avenue de la republique
@@ -148,6 +148,7 @@
     <button>Imprimer cette page</button>
 </header>
 
+<div class="tabcommande">
 <?php 
 // echo tableauarticle($article); 
 ?>
@@ -199,9 +200,11 @@
             </td>
         </tr>
 </table>
+</div>
 
 <footer style="margin-top: 20px; padding-top: 50px; text-align: center">
     Téléphone : <a href==#">07 11 22 33 34</a> - <a href==#">Email : moi@monentreprise.com</a> - <a href==#">3, avenue de la République</a>
+</footer>
 </div>
 
 <?php include 'footer.php' ?>

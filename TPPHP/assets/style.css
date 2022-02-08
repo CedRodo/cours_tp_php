@@ -38,6 +38,7 @@ h2 {
 }
 
 .entete {
+    height: 22%;
     padding-top: 10px;
     margin-top: 50px;
     margin-bottom: 120px;
@@ -48,6 +49,7 @@ h2 {
 
 .entete p {
     margin-top: 0px;
+    width: 25%;
 }
 
 p {
@@ -68,4 +70,12 @@ button {
 .tabbc {
     display: inline;
     width:auto;
+}
+
+footer {
+    height: 22%;
+}
+
+.tabcommande {
+    height: 49%;
 }
