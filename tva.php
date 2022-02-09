@@ -1,6 +1,6 @@
 <divc class="prixtva">
-<?php include('header.php'); ?>
-<?php include('fonctions.php'); ?>
+<?php require('header.php'); ?>
+<?php require('fonctions.php'); ?>
 <h1>PRIX AUGMENTE D'UNE TVA</h1>
 <p>Créez une fonction somme retournant un prix avec la TVA.
 
@@ -27,4 +27,4 @@ echo ajouttva(230.50,0.2);
 echo "<br/><br/>";
 ?>
 </div>
-<?php include('footer.php'); ?>
+<?php require('footer.php'); ?>

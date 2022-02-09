@@ -1,4 +1,4 @@
-<?php include('header.php'); ?>
+<?php require('header.php'); ?>
 <div class="accueil">
 <h1>COURS ET EXERCICES DE PHP</h1>
 <img src="./assets/logophp.png">
@@ -11,4 +11,4 @@ Vous pouvez également accéder à d'autres cours :
 <a href ="../courshtmlcss/index.php" target="_blank">HTML/CSS</a>
 </p>
 </div>
-<?php include('footer.php'); ?>
+<?php require('footer.php'); ?>

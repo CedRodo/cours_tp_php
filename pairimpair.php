@@ -1,6 +1,6 @@
 <div class="pairimpair">
-<?php include('header.php'); ?>
-<?php include('fonctions.php'); ?>
+<?php require('header.php'); ?>
+<?php require('fonctions.php'); ?>
 <h1>NOMBRE PAIR OU IMPAIR</h1>
 <p>Créez une fonction qui affiche si le nombre entré en paramètre est pair ou impair.
 
@@ -28,4 +28,4 @@ echo pairimpair(8);
 echo "<br/><br/>";
 ?>
 </div>
-<?php include('footer.php'); ?>
+<?php require('footer.php'); ?>

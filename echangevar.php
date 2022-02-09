@@ -1,7 +1,7 @@
 <div class="echangevar">
-<?php include('header.php'); ?>
-<?php include('fonctions.php'); ?>
-<h1>ECHANGE DE VARIABLES</h1>
+<?php require('header.php'); ?>
+<?php require('fonctions.php'); ?>
+<h1>ÉCHANGE DE VARIABLES</h1>
 <p>Créez une fonction qui échange les valeurs entrées en paramètre.
 
 
@@ -27,4 +27,4 @@ echangeVar(2000,'AS Monaco');
 echo "<br/><br/>";
 ?>
 </div>
-<?php include('footer.php'); ?>
+<?php require('footer.php'); ?>

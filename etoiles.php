@@ -1,7 +1,7 @@
 <div class="etoiles">
-<?php include('header.php'); ?>
-<?php include('fonctions.php'); ?>
-<h1>CARRE D'ETOILES</h1>
+<?php require('header.php'); ?>
+<?php require('fonctions.php'); ?>
+<h1>CARRE D'ÉTOILES</h1>
 <p>Créez une fonction qui affiche le carré d'étoiles d'un nombre entré en paramètre.
 
 
@@ -29,4 +29,4 @@ echo etoiles(9);
 echo "<br/>";
 ?>
 </div>
-<?php include('footer.php'); ?>
+<?php require('footer.php'); ?>

@@ -1,5 +1,5 @@
 <div class="cours">
-<?php include('header.php'); ?>
+<?php require('header.php'); ?>
 <h1>COURS DE PHP</h1>
 <p style="margin: 100px 30px 100px 0px; text-align:end;">Le PDF de Découverte programmation PHP est disponible <a class="pdf" href="./assets/decouvertephp.pdf" target="_blank">ici <img class="logopdf" src="./assets/iconpdf.png" alt="pdf" ></a></p>
 <p style="margin-bottom: 40px; text-decoration: underline;">Contenu du cours en code :</p>
@@ -548,4 +548,4 @@ echo calculette($tab,&quot;/&quot;);
 </pre>
 
 </div>
-<?php include('footer.php'); ?>
+<?php require('footer.php'); ?>

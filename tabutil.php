@@ -1,7 +1,7 @@
 
 <div class="tabutil">
-<?php include('header.php'); ?>
-<?php include('fonctions.php'); ?>
+<?php require('header.php'); ?>
+<?php require('fonctions.php'); ?>
 <h1>TABLEAU D'UTILISATEURS</h1>
 <p>Créez un tableau d'utilisateurs qui sera affiché avec la méthode "foreach".
 
@@ -43,4 +43,4 @@ foreach ($utilisateur as $key => $value) {
 echo "<br/><br/>";
 ?>
 </div>
-<?php include('footer.php'); ?>
+<?php require('footer.php'); ?>

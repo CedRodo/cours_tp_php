@@ -1,6 +1,6 @@
 <div class="bonjour">
-<?php include('header.php'); ?>
-<?php include('fonctions.php'); ?>
+<?php require('header.php'); ?>
+<?php require('fonctions.php'); ?>
 <h1>BONJOUR A UN UTILISATEUR</h1>
 <p>Créez une fonction qui dit Bonjour à l'utilisateur qui y a entré son prénom et nom.
 
@@ -25,4 +25,4 @@ bonjour('Cédric','Rodony');
 echo "<br/><br/>";
     ?>
 </div>
-<?php include('footer.php'); ?>
+<?php require('footer.php'); ?>

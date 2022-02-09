@@ -1,6 +1,6 @@
 <div class="tablemulti">
-<?php include('header.php'); ?>
-<?php include('fonctions.php'); ?>
+<?php require('header.php'); ?>
+<?php require('fonctions.php'); ?>
 <h1>TABLE DE MULTIPLICATION</h1>
 <p>Créez une fonction affichant les tables de multiplication du nombre entré en paramètre.
 
@@ -28,4 +28,4 @@ function multNombre(int $nb) {
 echo multNombre(6);
 ?>
 </div>
-<?php include('footer.php'); ?>
+<?php require('footer.php'); ?>
