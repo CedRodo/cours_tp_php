@@ -1,6 +1,6 @@
-<div class="factorielle">
 <?php require('header.php'); ?>
 <?php require('fonctions.php'); ?>
+<div class="factorielle">
 <h1>FACTORIELLE D'UN NOMBRE</h1>
 <p>Créez une fonction retournant la factorielle du nombre entré en parametre.
 
