@@ -1,10 +1,5 @@
-<?php require 'header.php';
-    if (isset($_SESSION['user'])==false) {
-        header('location: backend/identification.php');
-        die;
-    }
-  
-    ?>
+<?php require 'header.php'; ?>
+<?php if (isset($_SESSION['user'])==false) { header('location: backend/identification.php'); die; } ?>
 <div class="accueil">
 <h1>COURS ET EXERCICES DE PHP</h1>
 <img src="http://localhost/monsite/coursphp/assets/logophp.png">

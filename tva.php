@@ -1,6 +1,7 @@
-<divc class="prixtva">
 <?php require('header.php'); ?>
+<?php if (isset($_SESSION['user'])==false) { header('location: backend/identification.php'); die; } ?>
 <?php require('fonctions.php'); ?>
+<div class="prixtva">
 <h1>PRIX AUGMENTE D'UNE TVA</h1>
 <p>Créez une fonction somme retournant un prix avec la TVA.
 

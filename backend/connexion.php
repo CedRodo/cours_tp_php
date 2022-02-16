@@ -32,14 +32,14 @@ require "startbd.php";
 
 bd();
 
-require_once "Utilisateur.php";
+require_once "Utilisateurs.php";
 
 
 // Variables POST
-$nomUtilLog=$_POST['name'];
+$emailUtilLog=$_POST['mail'];
 $mdpUtilLog=$_POST['password'];
 
-$entry = Utilisateur::retrieveByNom($_POST['name'], SimpleOrm::FETCH_ONE);
+$entry = Utilisateurs::retrieveByEmail($_POST['mail'], SimpleOrm::FETCH_ONE);
 
 
 
@@ -54,18 +54,18 @@ if ($entry==null){
 // 3. comparer les données SI POST['nom']==entry->prenom && .. alors OK
 
 // Variable B.D.
+$emailUtilTable=$entry->email;
 $nomUtilTable=$entry->nom;
 $prenomUtilTable=$entry->prenom;
-$mdpUtilTable=$entry->mdp;
+$mdpUtilTable=$entry->motdepasse;
 
-if (($nomUtilLog==$nomUtilTable) && ($mdpUtilLog==$mdpUtilTable)){
+if (($emailUtilLog==$emailUtilTable) && ($mdpUtilLog==$mdpUtilTable)){
     echo "<br/><br/><p>Bonjour, ".$prenomUtilTable." ".$nomUtilTable." !</p>
     Vous pouvez accéder aux cours <a href=../index.php>PHP</a></p>";
-    // session_start();
-    $_SESSION['user']=$nomUtilLog;
-
+    $_SESSION['user']=$_POST['mail'];
+    $_SESSION['name']="$prenomUtilTable $nomUtilTable";
 }
-else if (($nomUtilLog==$nomUtilTable) && ($mdpUtilLog!=$mdpUtilTable)) {
+else if (($emailUtilLog==$emailUtilTable) && ($mdpUtilLog!=$mdpUtilTable)) {
     echo '<br/><br/><p style="color: red;">Mot de passe invalide, connexion impossible.</p>';
     echo "<br/><br/>"."Veuillez vous reconnecter ".' <button><a href="../index.php" style="text-decoration: none;">Retour à la connexion</a></button>';
 }    

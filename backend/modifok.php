@@ -2,9 +2,9 @@
 require "startbd.php";
 bd();
 
-require_once 'Utilisateur.php';
+require_once 'Utilisateurs.php';
 
-$entry = Utilisateur::retrieveByPK($_GET['id']);
+$entry = Utilisateurs::retrieveByPK($_GET['id']);
 ?>
 
 <?php
@@ -12,8 +12,8 @@ echo "<br/><br/>";
 
 $entry->nom = $_POST['nom'];
 $entry->prenom = $_POST['prenom'];
-$entry->mdp = $_POST['password'];
-$entry->mail = $_POST['mail'];
+$entry->motdepasse = $_POST['password'];
+$entry->email = $_POST['mail'];
 $entry->age = $_POST['age'];
 $entry->save();
 ?>

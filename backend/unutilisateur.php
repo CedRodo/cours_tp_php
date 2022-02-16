@@ -7,10 +7,10 @@
 // 1. Connecte BD 
 bd();
 
-require_once "Utilisateur.php";
+require_once "Utilisateurs.php";
 
 // recuperer l ensemble des données des utilisateurs
-$entry = Utilisateur::retrieveByPK($_GET['id']);
+$entry = Utilisateurs::retrieveByPK($_GET['id']);
  
 echo $entry->nom;
 // Recuperer l'ensemble des donnes de la tables utilisateurs

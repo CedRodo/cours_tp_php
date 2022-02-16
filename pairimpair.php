@@ -1,6 +1,7 @@
-<div class="pairimpair">
 <?php require('header.php'); ?>
+<?php if (isset($_SESSION['user'])==false) { header('location: backend/identification.php'); die; } ?>
 <?php require('fonctions.php'); ?>
+<div class="pairimpair">
 <h1>NOMBRE PAIR OU IMPAIR</h1>
 <p>Créez une fonction qui affiche si le nombre entré en paramètre est pair ou impair.
 

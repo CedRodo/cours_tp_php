@@ -1,4 +1,5 @@
 <?php require('header.php'); ?>
+<?php if (isset($_SESSION['user'])==false) { header('location: backend/identification.php'); die; } ?>
 <?php require('fonctions.php'); ?>
 <div class="factorielle">
 <h1>FACTORIELLE D'UN NOMBRE</h1>

@@ -5,12 +5,12 @@
 //  $_SESSION['user'] => unset
 // $_SESSion['age']  : session_destroy() => age et le user
 
-unset($_SESSION['user']);
+// unset($_SESSION['user']);
 
 
-// session_destroy();
+session_destroy();
 ?>
-Vous êtes deconnecté...
+<p style="color: green;">Vous êtes deconnecté...</p>
 <br/>
 <p>Vous pouvez vous reconnecter <a href="connexion.php">ici</a></p>
 <?php include "../footer.php"; ?>

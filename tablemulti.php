@@ -1,6 +1,7 @@
-<div class="tablemulti">
 <?php require('header.php'); ?>
+<?php if (isset($_SESSION['user'])==false) { header('location: backend/identification.php'); die; } ?>
 <?php require('fonctions.php'); ?>
+<div class="tablemulti">
 <h1>TABLE DE MULTIPLICATION</h1>
 <p>Créez une fonction affichant les tables de multiplication du nombre entré en paramètre.
 

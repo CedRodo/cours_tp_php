@@ -1,7 +1,7 @@
-
-<div class="tabutil">
 <?php require('header.php'); ?>
+<?php if (isset($_SESSION['user'])==false) { header('location: backend/identification.php'); die; } ?>
 <?php require('fonctions.php'); ?>
+<div class="tabutil">
 <h1>TABLEAU D'UTILISATEURS</h1>
 <p>Créez un tableau d'utilisateurs qui sera affiché avec la méthode "foreach".
 

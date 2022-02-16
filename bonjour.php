@@ -1,6 +1,7 @@
-<div class="bonjour">
 <?php require('header.php'); ?>
+<?php if (isset($_SESSION['user'])==false) { header('location: backend/identification.php'); die; } ?>
 <?php require('fonctions.php'); ?>
+<div class="bonjour">
 <h1>BONJOUR A UN UTILISATEUR</h1>
 <p>Créez une fonction qui dit Bonjour à l'utilisateur qui y a entré son prénom et nom.
 

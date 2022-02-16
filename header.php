@@ -13,23 +13,18 @@
 <body>
     <div style="text-align: end;">
     <br />
-    <p class="headerLog" style="font-size: 18px;"> <img src="http://localhost/monsite/coursphp/assets/login.png" alt="se connecter"> <a href="http://localhost/monsite/coursphp/backend/connexion.php">Connexion</a>  <img src="http://localhost/monsite/coursphp/assets/inscription.png" alt="s'inscrire"> <a href="http://localhost/monsite/coursphp/backend/inscription.php">Inscription</a> </p> 
+    <p class="headerLog" style="font-size: 18px;"><?php
+    if (isset($_SESSION['user'])==false) { ?><p class="headerLog" style="font-size: 16px; margin-right: 12px; color: red;"> Vous n'êtes pas connecté</p>
+    <?php } ?><?php
+    if (isset($_SESSION['user'])==true) { ?>
+        <p class="headerLog" style="font-size: 18px;"> <img src="http://localhost/monsite/coursphp/assets/user.png" alt="nom de l'utilisateur"> Bonjour <?php echo $_SESSION['name'];?> <img src="http://localhost/monsite/coursphp/assets/logout.png" alt="se déconnecter"> <a href="http://localhost/monsite/coursphp/backend/deconnexion.php">Déconnexion</a><?php } ?> <img src="http://localhost/monsite/coursphp/assets/login.png" alt="se connecter"> <a href="http://localhost/monsite/coursphp/backend/connexion.php">Connexion</a>  <img src="http://localhost/monsite/coursphp/assets/inscription.png" alt="s'inscrire"> <a href="http://localhost/monsite/coursphp/backend/inscription.php">Inscription</a> </p> 
     
-    <?php
-     if (isset($_SESSION['user'])==true) {
-         echo "<br/><br/> <p class='headerLog' style='font-size: 18px;''> <img src='http://localhost/monsite/coursphp/assets/user.png' alt='nom de l'utilisateur'> Bonjour ".$_SESSION['user'];
-         ?>
-          <img src="http://localhost/monsite/coursphp/assets/logout.png" alt="se déconnecter"> <a href="http://localhost/monsite/coursphp/backend/deconnexion.php">Déconnexion</a>  <img src="http://localhost/monsite/coursphp/assets/userslist.png" alt="liste complète des utilisateurs"> <a href="http://localhost/monsite/coursphp/backend/liste_utilisateur.php">Liste des utilisateurs</a></p>
-         <?php
-     }
-     else { ?>
-        <br/><br/><p class="headerLog" style="font-size: 18px;"> Vous n'êtes pas connecté<br/>
-    <?php } ?>
      </div>
 <header>
     <nav>  
-    <a href="http://localhost/monsite/coursphp/index.php">ACCUEIL </a> | <a href="http://localhost/monsite/coursphp/cours.php"> COURS </a> | <a href="http://localhost/monsite/coursphp/bonjour.php"> BONJOUR </a> | <a href="http://localhost/monsite/coursphp/etoiles.php"> CARRE D'ÉTOILES </a> | <a href="tablemulti.php"> TABLE DE MULTIPLICATION </a> | <a href="http://localhost/monsite/coursphp/somme.php"> SOMME D'UNE SUITE </a> | <a href="http://localhost/monsite/coursphp/factorielle.php"> FACTORIELLE D'UN NOMBRE </a> | <a href="http://localhost/monsite/coursphp/tva.php"> PRIX AVEC TVA </a> | <a href="http://localhost/monsite/coursphp/pairimpair.php"> PAIR OU IMPAIR </a> | <a href="http://localhost/monsite/coursphp/echangevar.php"> ÉCHANGE DE VARIABLES </a> | <a href="http://localhost/monsite/coursphp/tabutil.php"> TABLEAU D'UTILISATEURS </a> | <a href="jeu.php"> JEU DU NOMBRE À DEVINER </a> | <a href="http://localhost/monsite/coursphp/tpphp.php"> TP PHP</a>
+    <a href="http://localhost/monsite/coursphp/index.php">ACCUEIL </a> | <a href="http://localhost/monsite/coursphp/cours.php"> COURS </a> | <a href="http://localhost/monsite/coursphp/bonjour.php"> BONJOUR </a> | <a href="http://localhost/monsite/coursphp/etoiles.php"> CARRE D'ÉTOILES </a> | <a href="http://localhost/monsite/coursphp/tablemulti.php"> TABLE DE MULTIPLICATION </a> | <a href="http://localhost/monsite/coursphp/somme.php"> SOMME D'UNE SUITE </a> | <a href="http://localhost/monsite/coursphp/factorielle.php"> FACTORIELLE D'UN NOMBRE </a> | <a href="http://localhost/monsite/coursphp/tva.php"> PRIX AVEC TVA </a> | <a href="http://localhost/monsite/coursphp/pairimpair.php"> PAIR OU IMPAIR </a> | <a href="http://localhost/monsite/coursphp/echangevar.php"> ÉCHANGE DE VARIABLES </a> | <a href="http://localhost/monsite/coursphp/tabutil.php"> TABLEAU D'UTILISATEURS </a> | <a href="http://localhost/monsite/coursphp/jeu.php"> JEU DU NOMBRE À DEVINER </a> | <a href="http://localhost/monsite/coursphp/tpphp.php"> TP PHP</a> | <a href="http://localhost/monsite/coursphp/tpphp2.php"> TP PHP2</a>
     <br/>
     <hr>
     </nav>
 </header>
+<section class="container-php">

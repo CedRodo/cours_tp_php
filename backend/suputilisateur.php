@@ -2,9 +2,9 @@
 require "startbd.php";
 bd();
 
-require_once 'Utilisateur.php';
+require_once 'Utilisateurs.php';
 
-$entry = Utilisateur::retrieveByPK($_GET['id']); 
+$entry = Utilisateurs::retrieveByPK($_GET['id']); 
 // var_dump($entry);
 ?>
 

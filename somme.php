@@ -1,6 +1,7 @@
-<div class="somme">
 <?php require('header.php'); ?>
+<?php if (isset($_SESSION['user'])==false) { header('location: backend/identification.php'); die; } ?>
 <?php require('fonctions.php'); ?>
+<div class="somme">
 <h1>SOMME D'UNE SUITE D'UN NOMBRE</h1>
 <p>Créez une fonction somme affichant et additionnant une suite croissante de nombres incrémentés de 1 allant jusqu'au nombre entré en paramètre.
 

@@ -1,6 +1,7 @@
-<div class="echangevar">
 <?php require('header.php'); ?>
+<?php if (isset($_SESSION['user'])==false) { header('location: backend/identification.php'); die; } ?>
 <?php require('fonctions.php'); ?>
+<div class="echangevar">
 <h1>ÉCHANGE DE VARIABLES</h1>
 <p>Créez une fonction qui échange les valeurs entrées en paramètre.
 

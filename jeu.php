@@ -1,6 +1,7 @@
-<div class="jeu">
 <?php require('header.php'); ?>
+<?php if (isset($_SESSION['user'])==false) { header('location: backend/identification.php'); die; } ?>
 <?php require('fonctions.php'); ?>
+<div class="jeu">
 <h1>JEU DU NOMBRE À DEVINER</h1>
 <p>Créez une fonction générant un nombre à deviner aléatoire dans une fourchette de deux nombres entrés en paramètre et générant également un nombre aléatoire proposé par l'ordinateur dans cette même fourchette, le nombre à deviner et celui proposé devant correspondre pour gagner. La fonction doit aussi définir le nombre de tentatives maximal que l'ordinateur aura pour trouver le nombre à deviner, en veillant à chaque fois à ce qu'il ne propose qu'un nombre inférieur à celui qui a été jugé trop grand et qu'un nombre supérieur à celui jugé trop petit. La fonction gèrera également le nombre de parties possibles (une nouvelle partie pour chaque nombre deviné ou tentatives échouées).
 

@@ -1,4 +1,4 @@
-
+</section>
 <footer>
     <hr>
     <a href="#">© The Entertainer Prod.</a> | <a href="#">Mentions légales</a> | <button class="nightmode">Night Mode</button> | 2022

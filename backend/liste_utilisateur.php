@@ -4,11 +4,11 @@
 // Connecter à la BD
 require "startbd.php";
 bd();
-require_once "Utilisateur.php";
+require_once "Utilisateurs.php";
 
 echo "<h2>Liste complète des utilisateurs :</h2><br/><br/><br/>";
 // recuperer l ensemble des données des utilisateurs
-$entry = Utilisateur::all();
+$entry = Utilisateurs::all();
 
 foreach($entry as $monutilisateur){
     echo "<a href='unutilisateur.php?id=".$monutilisateur->id."'> $monutilisateur->prenom $monutilisateur->nom<button></a> <a href='modutilisateur.php?id=".$monutilisateur->id."&mode=modif'> Modifier </a></button> - <button><a href='suputilisateur.php?id=".$monutilisateur->id."'> Supprimer </a></button> <hr>";

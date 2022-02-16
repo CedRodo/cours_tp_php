@@ -9,5 +9,5 @@ function bd(){
 
     // 2. Recuperer l utilisateur souhaité
     require "SimpleOrm.class.php";
-    SimpleOrm::useConnection($conn, 'coursphp');
+    SimpleOrm::useConnection($conn, 'cours');
 }

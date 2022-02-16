@@ -23,11 +23,11 @@ if ( (isset($_POST['prenom'])==true) &&
       
         require_once "Utilisateur.php";
 
-        $entry = new Utilisateur;
+        $entry = new Utilisateurs;
         $entry->prenom = $_POST['prenom'];
         $entry->nom = $_POST['nom'];
-        $entry->mdp = $mdp;
-        $entry->mail = $_POST['mail'];
+        $entry->motdepasse = $mdp;
+        $entry->email = $_POST['mail'];
         $entry->age = $_POST['age'];
         $entry->save();
         

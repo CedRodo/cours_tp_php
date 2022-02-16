@@ -1,6 +1,7 @@
-<div class="etoiles">
 <?php require('header.php'); ?>
+<?php if (isset($_SESSION['user'])==false) { header('location: backend/identification.php'); die; } ?>
 <?php require('fonctions.php'); ?>
+<div class="etoiles">
 <h1>CARRE D'ÉTOILES</h1>
 <p>Créez une fonction qui affiche le carré d'étoiles d'un nombre entré en paramètre.
 
