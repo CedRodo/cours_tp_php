@@ -59,19 +59,19 @@ $nomUtilTable=$entry->nom;
 $prenomUtilTable=$entry->prenom;
 $mdpUtilTable=$entry->motdepasse;
 
-if (($emailUtilLog==$emailUtilTable) && ($mdpUtilLog==$mdpUtilTable)){
-    echo "<br/><br/><p>Bonjour, ".$prenomUtilTable." ".$nomUtilTable." !</p>
-    Vous pouvez accéder aux cours <a href=../index.php>PHP</a></p>";
+if (($emailUtilLog==$emailUtilTable) && (password_verify($mdpUtilLog, $mdpUtilTable))) {
+    echo "<br/><br/><p>Bonjour, ".$prenomUtilTable." ".$nomUtilTable." ! Vous pouvez accéder aux cours <a href=../index.php>PHP</a></p>";
     $_SESSION['user']=$_POST['mail'];
     $_SESSION['name']="$prenomUtilTable $nomUtilTable";
 }
-else if (($emailUtilLog==$emailUtilTable) && ($mdpUtilLog!=$mdpUtilTable)) {
-    echo '<br/><br/><p style="color: red;">Mot de passe invalide, connexion impossible.</p>';
+else if ($emailUtilLog!=$emailUtilTable) {
+    echo '<br/><br/><p style="color: red;">Identifiant de connexion invalide.</p>';
     echo "<br/><br/>"."Veuillez vous reconnecter ".' <button><a href="../index.php" style="text-decoration: none;">Retour à la connexion</a></button>';
 }    
 else {
-    echo '<br/><br/><p style="color: red;">Nom et/ou Mot de passe invalide(s), connexion impossible.</p>';
+    echo '<br/><br/><p style="color: red;">Mot de passe invalide.</p>';
     echo "<br/><br/>"."Veuillez vous reconnecter ".' <button><a href="../index.php" style="text-decoration: none;">Retour à la connexion</a></button>';
+    
 
 }
 ?>
