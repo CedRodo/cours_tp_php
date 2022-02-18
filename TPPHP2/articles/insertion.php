@@ -8,11 +8,11 @@ if ((isset($_POST['ref'])==true) &&
      (isset($_POST['prix'])==true))
     
     {
-      require "startbd.php";
+      require "../startbd.php";
       bd();
       // Insertion BD
       
-        require_once "Articles.php";
+        require_once "../Articles.php";
 
         $entry = new Articles;
         $entry->ref = $_POST['ref'];
