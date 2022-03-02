@@ -1,6 +1,6 @@
 <?php if (isset($_GET['id'])==true) { $id = $_GET['id']; } ?>
 <?php 
-if (isset($_GET['mode'])==true) { 
+if (isset($_GET['mode'])) { 
      if ($_GET['mode']=='modif') {
          $mode='modif'; ?>
          <h4 class="center">Modification de :</h4>

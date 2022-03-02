@@ -17,7 +17,7 @@
     if (isset($_SESSION['user'])==false) { ?><p class="headerLog" style="font-size: 16px; margin-right: 12px; color: red;"> Vous n'êtes pas connecté</p>
     <?php } ?>
     <p class="headerLog" style="font-size: 18px;"> <?php if (isset($_SESSION['user'])==true) { ?>
-    <img src="http://localhost/monsite/coursphp/assets/user.png" alt="nom de l'utilisateur"> Bonjour <?php echo $_SESSION['name'];?> <img src="http://localhost/monsite/coursphp/assets/logout.png" alt="se déconnecter"> <a href="http://localhost/monsite/coursphp/backend/deconnexion.php">Déconnexion</a><?php } ?> <img src="http://localhost/monsite/coursphp/assets/login.png" alt="se connecter"> <a href="http://localhost/monsite/coursphp/backend/connexion.php">Connexion</a>  <img src="http://localhost/monsite/coursphp/assets/inscription.png" alt="s'inscrire"> <a href="http://localhost/monsite/coursphp/backend/inscription.php">Inscription</a> </p> 
+    <img src="http://localhost/monsite/coursphp/assets/user.png" alt="nom de l'utilisateur"> Bonjour <?php echo $_SESSION['name'];?> <img src="http://localhost/monsite/coursphp/assets/logout.png" alt="se déconnecter"> <a href="http://localhost/monsite/coursphp/backend/deconnexion.php">Déconnexion</a><?php } else { ?> <img src="http://localhost/monsite/coursphp/assets/login.png" alt="se connecter"> <a href="http://localhost/monsite/coursphp/backend/connexion.php">Connexion</a> <?php } ?> <img src="http://localhost/monsite/coursphp/assets/inscription.png" alt="s'inscrire"> <a href="http://localhost/monsite/coursphp/backend/inscription.php">Inscription</a> </p> 
     
      </div>
 <header>
